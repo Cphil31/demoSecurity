@@ -11,9 +11,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class RegistrationController extends AbstractController
 {
-    /**
-     * @Route("/register", name="user_registration")
-     */
+ 
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
         // 1) build the form
@@ -40,7 +38,7 @@ class RegistrationController extends AbstractController
         }
 
         return $this->render(
-            'registration/register.html.twig',
+            'registration/index.html.twig',
             array('form' => $form->createView())
         );
     }
